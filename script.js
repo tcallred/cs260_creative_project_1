@@ -1,27 +1,25 @@
 // var = new array();
-var quotes = new array();
-quotes.push("a");
-quotes.push("a");
-quotes.push("a");
-quotes.push("a");
-quotes.push("a");
-quotes.push("a");
-quotes.push("a");
-quotes.push("a");
+var quotes;
+var response;
+var index = -1;
+window.onload = function() {
+	quotes = ["a","b","c"];
+	quotes.push("d");
+	quotes.push("e");
+	quotes.push("f");
+	quotes.push("g");
+	quotes.push("h");
+	quotes.push("i");
+	quotes.push("j");
+	quotes.push("k");
 
-// names[0] = prompt("New member name?");
-// localStorage.setItem("names", JSON.stringify(names));
-//
-// //...
-// var storedNames = JSON.parse(localStorage.getItem("names"));
-//
-//
-
-var response = "<p>";
-var index;
-//onClick() function
+}		
 function get_quote() {
-    index =  Math.floor(Math.random() * Math.floor(quotes.length));
-    response += quotes[index] + "</p>";
-}
-document.getElementById("quote").innerHTML = response;
+	var new_index = index;
+	while(new_index == index) {
+		new_index = Math.floor(Math.random() * Math.floor(quotes.length));		
+	}
+	index = new_index;
+	response = "<p>" + quotes[index] + "</p>";
+	document.getElementById("quote").innerHTML = response;
+}		
